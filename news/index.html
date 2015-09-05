@@ -7,11 +7,41 @@
 <body>
 
 
-<p>hi,</p>
+<h1>hi,</h1><h1 id="name"></h1>
 
+
+
+
+
+
+
+
+<script src="../js/tpl.js"></script>
+<script src="https://cdn1.lncld.net/static/js/av-mini-0.6.1.js"></script>
 <script>
+    AV.initialize("Qirl4XoUs0g2VhuG8sj9NLCa", "Ww3g4thWWLtti3eixhmLf3JA");
 
-    alert('Hello');
+    var Toy = AV.Object.extend("GitToyClass");
+    var query = new AV.Query(Toy);
+    query.equalTo("GitNameKey", "猫十八");
+    query.find({
+        success: function(object) {
+
+            alert(JSON.stringify(object));
+
+            document.getElementById('name').innerHTML =JSON.stringify(object);
+
+
+        },
+        error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+        }
+    });
+
+
+
+
+
 
 </script>
 
