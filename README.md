@@ -1,3 +1,3 @@
 #AmazeUI开发大赛#
-web:
+web:m18.pub
 description:
